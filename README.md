@@ -1,17 +1,12 @@
 # HDL
 Human disruption library -- strobe, mess with, and confuse to your heart's content.
 
-# Usage
-
-# Global
-
-
-
-
 
 * * *
 
-### HDL.strobe(frequency, color, opacity) 
+# Usage
+
+### HDL.strobe(frequency, color, opacity)
 
 Strobes the screen at a given frequency, color, and opacity
 
@@ -25,7 +20,7 @@ Strobes the screen at a given frequency, color, and opacity
 
 **Returns**: `Number`, the action id of the strobe, used in cancellation
 
-### HDL.playSound(url, loop) 
+### HDL.playSound(url, loop)
 
 Plays a sound fetched (GET) from an external URL
 
@@ -36,7 +31,7 @@ Plays a sound fetched (GET) from an external URL
 **loop**: `Boolean`, indicate whether the file should be looped or not
 
 
-### HDL.speak(text) 
+### HDL.speak(text)
 
 Synthesizes speech using the native library (not supported by all browsers)
 
@@ -45,7 +40,7 @@ Synthesizes speech using the native library (not supported by all browsers)
 **text**: `String`, text to be spoken
 
 
-### HDL.randomScroll(pixels, interval) 
+### HDL.randomScroll(pixels, interval)
 
 Scroll the page in a random vertical direction
 
@@ -57,7 +52,7 @@ Scroll the page in a random vertical direction
 
 **Returns**: `Number`, the action id of the scroller, used in cancellation
 
-### HDL.cancelAction(actionID) 
+### HDL.cancelAction(actionID)
 
 Cancels an action
 
