@@ -1,7 +1,6 @@
 (function(window) {
     'use strict';
 
-
     /**
      * The master HDL object
      * @constructor
