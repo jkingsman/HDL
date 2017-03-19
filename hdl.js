@@ -30,7 +30,7 @@
 
             // avoid blocking clicks
             overlay.style.pointerEvents = 'none';
-            overlay.id = 'HDLOverlay' + Math.floor(Math.random()*16777215).toString(16); // nice random ID
+            overlay.id = 'HDLOverlay' + Math.floor(Math.random() * 16777215).toString(16); // nice random ID
             document.body.appendChild(overlay);
 
             // convert frequency
@@ -83,6 +83,21 @@
         };
 
         /**
+         * Plays a sine wave at the given frequency in Hz
+         * @param {Number} frequency desired frequency of sine wave
+         */
+        HDL.playTone = function(frequency) {
+            window.AudioContext = window.AudioContext || window.webkitAudioContext; // shims...
+            var context = new AudioContext();
+
+            var oscillator = context.createOscillator();
+            oscillator.type = 'sine';
+            oscillator.frequency.value = frequency; // value in hertz
+            oscillator.connect(context.destination);
+            oscillator.start();
+        };
+
+        /**
          * Synthesizes speech using the native library (not supported by all browsers)
          * @param {String} text text to be spoken
          */
@@ -124,7 +139,7 @@
             // clear the interval
             clearInterval(idAndDOMObj[0]);
 
-            if(idAndDOMObj.length > 1){
+            if (idAndDOMObj.length > 1) {
                 // we have a DOM object ID
                 document.getElementById(idAndDOMObj[1]).remove();
             }
